@@ -2,12 +2,30 @@ const path = require("path");
 const SRC_DIR = path.resolve(__dirname, "src");
 const DIST_DIR = path.resolve(__dirname, "dist");
 const NODE_DIR = path.resolve(__dirname, "node_modules");
+
+//plugins
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+
+//for maven-frontend-plugin
+const MAVEN_NODE_DIR = path.resolve(__dirname, "node");
+const packageJSON = require("./package.json");
+const MAVEN_WEBJAR_PATH = {
+  build: path.join(
+    __dirname,
+    "target",
+    "classes",
+    "META-INF",
+    "resources",
+    "webjars",
+    packageJSON.name,
+    packageJSON.version
+  )
+};
 
 module.exports = {
   entry: SRC_DIR + "/index.jsx",
   devServer: {
-    contentBase: DIST_DIR
+    contentBase: MAVEN_WEBJAR_PATH.build
   },
   module: {
     //loaders to use for different file types
@@ -16,6 +34,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: SRC_DIR,
         exclude: NODE_DIR,
+        exclude: MAVEN_NODE_DIR,
         use: {
           loader: "babel-loader"
         }
@@ -23,7 +42,7 @@ module.exports = {
     ]
   },
   output: {
-    path: DIST_DIR,
+    path: MAVEN_WEBJAR_PATH.build,
     filename: "bundle.js"
   },
   //this allows extensions to be omitted when importing
