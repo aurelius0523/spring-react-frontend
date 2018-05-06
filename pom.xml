@@ -46,6 +46,7 @@
             </configuration>
           </execution>
         </executions>
+        <!-- Optional. Added for clarity -->
         <configuration>
           <installDirectory>target</installDirectory>
         </configuration>

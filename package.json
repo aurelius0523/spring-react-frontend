@@ -1,6 +1,6 @@
 {
-  "name": "frontend-demo",
-  "version": "1.0.0",
+  "name": "spring-react-frontend",
+  "version": "0.0.1-SNAPSHOT",
   "description": "frontend built with Spring maven",
   "main": "index.js",
   "scripts": {
@@ -16,8 +16,14 @@
   "author": "kim.loong.tan",
   "license": "ISC",
   "babel": {
-    "presets": ["es2015", "react", "stage-0"],
-    "plugins": ["transform-object-rest-spread"]
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",
