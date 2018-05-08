@@ -11,19 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/aurelius0523/spring-maven-demo"
+    "url": "github.com/aurelius0523/spring-react-frontend"
   },
   "author": "kim.loong.tan",
   "license": "ISC",
   "babel": {
-    "presets": [
-      "es2015",
-      "react",
-      "stage-0"
-    ],
-    "plugins": [
-      "transform-object-rest-spread"
-    ]
+    "presets": ["es2015", "react", "stage-0"],
+    "plugins": ["transform-object-rest-spread"]
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",
