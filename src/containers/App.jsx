@@ -1,13 +1,16 @@
 import React from "react";
 import { format } from "url";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export default class App extends React.Component {
   render() {
     return (
-      <form id="dummyFrom">
-        <label>A from!</label>
-        <input type="text" />
-      </form>
+      <div className="App">
+        <Header />
+        <div className="content" />
+        <Footer />
+      </div>
     );
   }
 }
