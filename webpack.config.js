@@ -10,16 +10,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MAVEN_NODE_DIR = path.resolve(__dirname, "node");
 const packageJSON = require("./package.json");
 const MAVEN_WEBJAR_PATH = {
-  build: path.join(
-    __dirname,
-    "target",
-    "classes",
-    "META-INF",
-    "resources",
-    "webjars",
-    packageJSON.name,
-    packageJSON.version
-  )
+  build: path.join(__dirname, "target", "classes", "META-INF", "resources")
 };
 
 module.exports = {
