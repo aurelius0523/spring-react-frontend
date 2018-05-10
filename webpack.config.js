@@ -33,11 +33,14 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         include: SRC_DIR,
-        exclude: NODE_DIR,
-        exclude: MAVEN_NODE_DIR,
+        exclude: [NODE_DIR, MAVEN_NODE_DIR],
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },

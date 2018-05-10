@@ -1,7 +1,8 @@
 import React from "react";
 import { format } from "url";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import style from "../styles/main.css";
 
 export default class App extends React.Component {
   render() {
