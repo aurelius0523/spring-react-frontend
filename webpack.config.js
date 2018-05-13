@@ -16,7 +16,8 @@ const MAVEN_WEBJAR_PATH = {
 module.exports = {
   entry: SRC_DIR + "/index.jsx",
   devServer: {
-    contentBase: MAVEN_WEBJAR_PATH.build
+    contentBase: MAVEN_WEBJAR_PATH.build,
+    historyApiFallback: true
   },
   module: {
     //loaders to use for different file types
@@ -32,9 +33,28 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "babel-loader"
+          },
+          {
+            loader: "react-svg-loader",
+            options: {
+              jsx: true,
+              svgo: {
+                plugins: [{ removeTitle: false }],
+                floatPrecision: 2
+              }
+            }
+          }
+        ]
       }
     ]
   },
+  //output folder for bundled stuffs
   output: {
     path: MAVEN_WEBJAR_PATH.build,
     filename: "bundle.js"
@@ -43,7 +63,7 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"]
   },
-  //takes index.html at root and updates them with new hashed dependencies
+  //takes index.html at root and updates them with new hashed dependencies (bundle.js)
   plugins: [
     new HtmlWebPackPlugin({
       template: "index.html",
