@@ -11,7 +11,7 @@ import AppRouter from "../routers/AppRouter";
 
 const Layout = styled.div`
   display: grid;
-  grid-template-rows: 100px auto auto 100px;
+  grid-template-rows: auto auto auto 100px;
 `;
 
 const JustifiedContent = styled.div`

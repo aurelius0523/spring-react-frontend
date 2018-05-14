@@ -1,48 +1,91 @@
-import React from 'react';
-import styled from 'styled-components';
-import ReactLogo from './animations/ReactLogo';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import ReactLogo from "./animations/ReactLogo";
+import { Link } from "react-router-dom";
 
 const FlexLayout = styled.div`
-  display: flex;
   background-color: ${props => props.theme.primaryColor};
   font-family: ${props => props.theme.fontFamily};
-  color: white;
-  padding: 1rem;
-  height: 1.5rem;
+  width: 100%;
+  display: block;
 `;
 
-const StyledLink = styled(Link)`
-  color: white;
-  padding: 0 20px 0 20px;
-  height: 60px;
-  text-decoration: none;
-  :hover {
-    background-color: #373940;
+const FlexHeaderContainer = styled.div`
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (max-width: 599px) {
+    height: 40px;
+  }
+
+  @media (min-width: 600px) {
+    height: 60px;
+  }
+
+  @media (min-width: 1340px) {
+    max-width: 1260px;
+  }
+
+  @media (min-width: 780px) {
+    width: 90%;
   }
 `;
 
-const FlexStyledLinkContainer = styled.div`
-  flex-grow: 5;
-`;
-
-const FlexReactLogoContainer = styled.div`
-  margin-left: 30px;
+const FlexReactLogoContainer = styled.a.attrs({
+  href: "/"
+})`
   display: flex;
   align-items: center;
-  justify-content: center;
+  text-decoration: none;
+  height: inherit;
+
+  @media (min-width: 600px) {
+    width: calc(100% / 6);
+  }
+`;
+
+const ReactLettering = styled.span`
+  font-style: normal;
+  font-family: ${props => props.theme.fontFamily};
+  color: ${props => props.theme.colorReactBlue};
+  font-weight: 700;
+  font-size: 20px;
+`;
+
+const FlexNavContainer = styled.nav`
+  display: flex;
+  height: 100%;
+  width: 60%;
+  align-items: stretch;
+`;
+
+const StyledNavLink = styled(Link)`
+  display: flex;
+  font-weight: 100px;
+  text-decoration: none;
+  align-self: center;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
 `;
 
 export default () => (
   <FlexLayout>
-    <FlexReactLogoContainer>
-      <ReactLogo width={50} height={50} />
-    </FlexReactLogoContainer>
-    <FlexStyledLinkContainer>
-      <StyledLink to="/docs">Docs</StyledLink>
-      <StyledLink to="/tutorial">Tutorial</StyledLink>
-      <StyledLink to="/community">Community</StyledLink>
-      <StyledLink to="/blog">Blog</StyledLink>
-    </FlexStyledLinkContainer>
+    <FlexHeaderContainer>
+      <FlexReactLogoContainer>
+        <ReactLogo height={30} />
+        <ReactLettering>React</ReactLettering>
+      </FlexReactLogoContainer>
+      <FlexNavContainer>
+        <StyledNavLink to="/docs">Docs</StyledNavLink>
+        <StyledNavLink to="/tutorial">Tutorial</StyledNavLink>
+        <StyledNavLink to="/community">Community</StyledNavLink>
+        <StyledNavLink to="/blog">Blog</StyledNavLink>
+      </FlexNavContainer>
+    </FlexHeaderContainer>
   </FlexLayout>
 );
