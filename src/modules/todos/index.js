@@ -1,1 +1,1 @@
-export { default as Todos } from './components';
+export { Todo, TodoList } from './components';

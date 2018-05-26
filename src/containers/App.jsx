@@ -2,11 +2,10 @@ import React from 'react';
 import { format } from 'url';
 import styled from 'styled-components';
 import style from '../styles/main.css';
-import Todo from '../components/Todo';
-import Main from '../components/Main';
 import { Link, Route } from 'react-router-dom';
 import AppRouter from '../routers/AppRouter';
 import { Footer, Header } from '~/modules/layouts';
+import { Todo } from '~/modules/todos';
 
 const Layouts = styled.div`
   height: inherit;
