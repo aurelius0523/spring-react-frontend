@@ -1,30 +1,35 @@
-import React from "react";
-import { format } from "url";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import styled from "styled-components";
-import style from "../styles/main.css";
-import Todo from "../components/Todo";
-import Main from "../components/Main";
-import { Link, Route } from "react-router-dom";
-import AppRouter from "../routers/AppRouter";
+import React from 'react';
+import { format } from 'url';
+import styled from 'styled-components';
+import style from '../styles/main.css';
+import Todo from '../components/Todo';
+import Main from '../components/Main';
+import { Link, Route } from 'react-router-dom';
+import AppRouter from '../routers/AppRouter';
+import { Footer, Header } from '~/modules/layouts';
 
-const Layout = styled.div`
-  display: grid;
-  grid-template-rows: auto auto auto 100px;
+const Layouts = styled.div`
+  height: inherit;
+  display: flex;
+  flex-direction: column;
 `;
 
 const JustifiedContent = styled.div`
   justify-self: center;
   align-self: center;
+  min-height: 100%;
+`;
+
+const StickyFooter = styled(Footer)`
+  flex-shrink: 0;
 `;
 
 export default class App extends React.Component {
   render() {
     return (
-      <Layout>
+      <Layouts>
         <Header />
-        <div>
+        {/* <div>
           <ul>
             <li>
               <Link to="/">Todo</Link>
@@ -33,12 +38,12 @@ export default class App extends React.Component {
               <Link to="/main">Main</Link>
             </li>
           </ul>
-        </div>
+        </div> */}
         <JustifiedContent>
           <AppRouter />
         </JustifiedContent>
-        <Footer />
-      </Layout>
+        <StickyFooter />
+      </Layouts>
     );
   }
 }

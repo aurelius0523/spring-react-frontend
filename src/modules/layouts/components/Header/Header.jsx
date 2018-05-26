@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import ReactLogo from './animations/ReactLogo';
+import { ReactLogo } from '~/modules/animations';
 import { Link } from 'react-router-dom';
 
-const FlexLayout = styled.div`
+const FlexLayout = styled.header`
   background-color: ${props => props.theme.colorShark};
   font-family: ${props => props.theme.fontFamily};
   width: 100%;

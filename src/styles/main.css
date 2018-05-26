@@ -1,4 +1,13 @@
 html,
-body {
+body,
+#app {
   margin: 0px;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background: linear-gradient(to top, #f3e7e9 50%, #e3eeff 99%, #e3eeff 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
