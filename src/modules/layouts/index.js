@@ -1,1 +1,1 @@
-export { Footer, Header } from './components';
+export { Footer, Header, VerticalScrollProgressBar } from './components';

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import style from '../styles/main.css';
 import { Link, Route } from 'react-router-dom';
 import AppRouter from '../routers/AppRouter';
-import { Footer, Header } from '~/modules/layouts';
+import { Footer, Header, VerticalScrollProgressBar } from '../modules/layouts';
 import { Todo } from '~/modules/todos';
 
 const Layouts = styled.div`
@@ -27,6 +27,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Layouts>
+        <VerticalScrollProgressBar />
         <Header />
         {/* <div>
           <ul>
@@ -41,7 +42,7 @@ export default class App extends React.Component {
         <JustifiedContent>
           <AppRouter />
         </JustifiedContent>
-        <StickyFooter />
+        <StickyFooter title="hi" />
       </Layouts>
     );
   }

@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const theme = {
   colorShark: '#20232a',
   colorMalibu: '#61dafb',
+  colorAbbey: '#4e4f56',
   fontFamily:
     '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif'
 };
