@@ -8,6 +8,7 @@ const theme = {
   colorShark: '#20232a',
   colorMalibu: '#61dafb',
   colorAbbey: '#4e4f56',
+  colorCornflowerBlue: '#999',
   fontFamily:
     '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif'
 };
