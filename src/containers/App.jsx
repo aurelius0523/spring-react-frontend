@@ -11,16 +11,14 @@ const Layouts = styled.div`
   height: inherit;
   display: flex;
   flex-direction: column;
+  font-family: ${props => props.theme.fontFamily};
 `;
 
 const JustifiedContent = styled.div`
   justify-self: center;
   align-self: center;
   min-height: 100%;
-`;
-
-const StickyFooter = styled(Footer)`
-  flex-shrink: 0;
+  margin-top: 63px;
 `;
 
 export default class App extends React.Component {
@@ -42,7 +40,7 @@ export default class App extends React.Component {
         <JustifiedContent>
           <AppRouter />
         </JustifiedContent>
-        <StickyFooter title="hi" />
+        <Footer />
       </Layouts>
     );
   }

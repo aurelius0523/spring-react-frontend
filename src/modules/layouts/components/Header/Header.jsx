@@ -7,7 +7,6 @@ const FlexLayout = styled.header`
   background-color: ${props => props.theme.colorShark};
   font-family: ${props => props.theme.fontFamily};
   width: 100%;
-  display: block;
   position: fixed;
 `;
 

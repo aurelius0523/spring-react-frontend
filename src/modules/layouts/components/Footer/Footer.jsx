@@ -4,47 +4,40 @@ import FooterLink from './FooterLink';
 
 const Layout = styled.footer`
   background-color: ${props => props.theme.colorShark};
-  min-height: 200px;
-  box-sizing: border-box;
+  color: ${props => props.theme.colorWhite};
+  padding-bottom: 50px;
 `;
 
 const FooterCentered = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
-  box-sizing: inherit;
-
-  @media (max-width: 599px) {
-    height: 40px;
-  }
-
-  @media (min-width: 600px) {
-    height: 60px;
-  }
-
-  @media (min-width: 1340px) {
-    max-width: 1260px;
-  }
-
-  @media (min-width: 780px) {
-    width: 90%;
-  }
+  max-width: 1260px;
 `;
 
-const FooterContentLeft = styled.div`
+const FooterContentGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+`;
+
+const FooterContentLeft = styled.section`
   grid-column: 1/2;
   box-sizing: inherit;
 `;
 
-const FooterContentRight = styled.div`
-  grid-column: 2/4;
-  box-sizing: inherit;
+const ParagraphStyle = styled.p`
+  color: ${props => props.theme.colorCornflowerBlue};
+  padding-top: 15px;
 `;
 
-const FooterContentRightFlexLayout = styled.div``;
+const FooterContentRight = styled.section`
+  grid-column: 2/4;
+  box-sizing: inherit;
+  height: inherit;
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(2, 1fr);
+`;
 
 export default class Footer extends React.Component {
   constructor(props) {
@@ -101,13 +94,18 @@ export default class Footer extends React.Component {
     return (
       <Layout>
         <FooterCentered>
-          <FooterContentLeft>Left</FooterContentLeft>
-          <FooterContentRight>
-            Right
-            {this.state.categories.map(category => {
-              return <FooterLink data={category} key={category.category} />;
-            })}
-          </FooterContentRight>
+          <FooterContentGrid>
+            <FooterContentLeft>
+              <ParagraphStyle>
+                Copyright © 2018 aurelius0523/kim.loong.tan
+              </ParagraphStyle>
+            </FooterContentLeft>
+            <FooterContentRight>
+              {this.state.categories.map(category => {
+                return <FooterLink data={category} key={category.category} />;
+              })}
+            </FooterContentRight>
+          </FooterContentGrid>
         </FooterCentered>
       </Layout>
     );

@@ -9,6 +9,7 @@ const theme = {
   colorMalibu: '#61dafb',
   colorAbbey: '#4e4f56',
   colorCornflowerBlue: '#999',
+  colorWhite: '#ffffff',
   fontFamily:
     '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif'
 };
@@ -23,6 +24,3 @@ ReactDOM.render(
   </ThemeProvider>,
   app
 );
-
-//Cloudy AppleGet
-//background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
