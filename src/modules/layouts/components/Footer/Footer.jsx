@@ -26,7 +26,7 @@ const FooterContentLeft = styled.section`
   box-sizing: inherit;
 `;
 
-const ParagraphStyle = styled.p`
+export const ParagraphStyle = styled.p`
   color: ${props => props.theme.colorCornflowerBlue};
   padding-top: 15px;
 `;

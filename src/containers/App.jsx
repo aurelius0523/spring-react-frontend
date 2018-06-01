@@ -6,7 +6,6 @@ import { Link, Route } from 'react-router-dom';
 import AppRouter from '../routers/AppRouter';
 import { Footer, Header, VerticalScrollProgressBar } from '../modules/layouts';
 import { Todo } from '~/modules/todos';
-
 const Layouts = styled.div`
   height: inherit;
   display: flex;
@@ -26,6 +25,7 @@ export default class App extends React.Component {
     return (
       <Layouts>
         <VerticalScrollProgressBar />
+
         <Header />
         {/* <div>
           <ul>

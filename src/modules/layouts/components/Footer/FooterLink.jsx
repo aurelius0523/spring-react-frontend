@@ -14,7 +14,7 @@ const CategoryTitle = styled.div`
   letter-spacing: 0.08rem;
 `;
 
-const StyledLinks = styled.a`
+const StyledLink = styled.a`
   font-size: 1rem;
   text-decoration: none;
   line-height: 2;
@@ -27,7 +27,7 @@ export default props => (
     {props.data.items.map(item => {
       return (
         <div key={item.url}>
-          <StyledLinks href={item.url}>{item.title}</StyledLinks>
+          <StyledLink href={item.url}>{item.title}</StyledLink>
         </div>
       );
     })}
