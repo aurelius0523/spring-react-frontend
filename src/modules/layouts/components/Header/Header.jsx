@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ReactLogo } from '~/modules/animations';
+import { ReactLogo } from '@modules/animations';
 import { Link } from 'react-router-dom';
+import { NavLink, NavLinks } from '@modules/layouts';
 
 const FlexLayout = styled.header`
   background-color: ${props => props.theme.colorShark};
@@ -55,23 +56,24 @@ const ReactLettering = styled.span`
   font-size: 20px;
 `;
 
-const FlexNavContainer = styled.nav`
-  display: flex;
-  height: 100%;
-  width: 60%;
-  align-items: stretch;
-`;
-
-const StyledNavLink = styled(Link)`
-  display: flex;
-  font-weight: 100px;
-  text-decoration: none;
-  align-self: center;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 16px;
-`;
+const datas = [
+  {
+    url: '/docs',
+    title: 'Docs'
+  },
+  {
+    url: '/tutorial',
+    title: 'Tutorial'
+  },
+  {
+    url: '/community',
+    title: 'Community'
+  },
+  {
+    url: '/blog',
+    title: 'Blog'
+  }
+];
 
 export default () => (
   <FlexLayout>
@@ -80,12 +82,7 @@ export default () => (
         <ReactLogo height={30} />
         <ReactLettering>React</ReactLettering>
       </FlexReactLogoContainer>
-      <FlexNavContainer>
-        <StyledNavLink to="/docs">Docs</StyledNavLink>
-        <StyledNavLink to="/tutorial">Tutorial</StyledNavLink>
-        <StyledNavLink to="/community">Community</StyledNavLink>
-        <StyledNavLink to="/blog">Blog</StyledNavLink>
-      </FlexNavContainer>
+      <NavLinks data={datas} />
     </FlexHeaderContainer>
   </FlexLayout>
 );

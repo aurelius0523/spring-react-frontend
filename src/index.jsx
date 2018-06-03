@@ -10,6 +10,7 @@ const theme = {
   colorAbbey: '#4e4f56',
   colorCornflowerBlue: '#999',
   colorWhite: '#ffffff',
+  colorTuna: '#3A3B42',
   fontFamily:
     '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif'
 };

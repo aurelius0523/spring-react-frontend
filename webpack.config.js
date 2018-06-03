@@ -35,6 +35,12 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
+        test: /\.md$/,
+        use: {
+          loader: 'raw-loader'
+        }
+      },
+      {
         test: /\.svg$/,
         use: [
           {
@@ -59,11 +65,17 @@ module.exports = {
     path: MAVEN_WEBJAR_PATH.build,
     filename: 'bundle.js'
   },
-  //this allows extensions to be omitted when importing
+
   resolve: {
+    //this allows extensions to be omitted when importing
     extensions: ['.js', '.jsx'],
+    //this allows aliased path imports. It should be kept in sync with jsconfig.json
     alias: {
-      ['~']: SRC_DIR
+      ['@modules']: path.join(__dirname, 'src', 'modules'),
+      ['@containers']: path.join(__dirname, 'src', 'containers'),
+      ['@resources']: path.join(__dirname, 'src', 'resources'),
+      ['@routers']: path.join(__dirname, 'src', 'routers'),
+      ['@styles']: path.join(__dirname, 'src', 'styles')
     }
   },
   //takes index.html at root and updates them with new hashed dependencies (bundle.js)

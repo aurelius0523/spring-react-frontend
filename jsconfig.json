@@ -1,6 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es6"
+    "target": "es5",
+    "jsx": "react",
+    "module": "commonjs",
+    "baseUrl": "src",
+    "paths": {
+      "@modules/*": ["modules/*"],
+      "@containers/*": ["containers/*"],
+      "@resources/*": ["resources/*"],
+      "@routers/*": ["routers/*"],
+      "@styles/*": ["styles/*"]
+    }
   },
+  "include": ["src"],
   "exclude": ["node_modules", "node", "dist", "target"]
 }

@@ -1,4 +1,7 @@
 {
   "presets": ["env", "react", "stage-2"],
-  "plugins": ["babel-plugin-styled-components"]
+  "plugins": [
+    "babel-plugin-styled-components",
+    "babel-plugin-transform-class-properties"
+  ]
 }
