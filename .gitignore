@@ -7,7 +7,6 @@ dist/
 
 //built from maven-frontend-plugin
 node/
-target/
 
 //eclipse and java
 .settings/

@@ -3,6 +3,10 @@
   "version": "0.0.1-SNAPSHOT",
   "description": "frontend built with Spring maven",
   "main": "index.js",
+  "engines": {
+    "npm": "5.6.0",
+    "node": "8.11.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",

@@ -4,6 +4,7 @@ const DIST_DIR = path.resolve(__dirname, 'dist');
 const NODE_DIR = path.resolve(__dirname, 'node_modules');
 
 //plugins
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 //for maven-frontend-plugin
@@ -83,6 +84,9 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: 'index.html',
       filename: './index.html'
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
     })
   ]
 };
