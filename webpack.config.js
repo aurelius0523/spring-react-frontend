@@ -17,7 +17,7 @@ const MAVEN_WEBJAR_PATH = {
 module.exports = {
   entry: SRC_DIR + '/index.jsx',
   devServer: {
-    contentBase: MAVEN_WEBJAR_PATH.build,
+    contentBase: DIST_DIR,
     historyApiFallback: true
   },
   module: {
@@ -63,7 +63,7 @@ module.exports = {
   },
   //output folder for bundled stuffs
   output: {
-    path: MAVEN_WEBJAR_PATH.build,
+    path: DIST_DIR,
     filename: 'bundle.js'
   },
 
