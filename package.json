@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
+    "build": "./node_modules/webpack/bin/webpack --mode production && node server.js",
     "dev": "webpack --mode development",
     "start": "webpack-dev-server --open --mode development"
   },
