@@ -1,7 +1,7 @@
 {
   "name": "spring-react-frontend",
   "version": "0.0.1-SNAPSHOT",
-  "description": "frontend built with Spring maven",
+  "description": "React frontend that can be bundled as Java jar",
   "main": "index.js",
   "engines": {
     "npm": "5.6.0",
@@ -9,15 +9,17 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production && node server.js",
-    "dev": "webpack --mode development",
-    "start": "webpack-dev-server --open --mode development"
+    "prod": "webpack --mode production --config webpack.prod.js && node server.js",
+    "dev": "webpack --mode development --config webpack.dev.js && npm run start",
+    "start": "webpack-dev-server --open --mode development --config webpack.dev.js",
+    "package": "webpack --mode production --config webpack.maven.js",
+    "analyze": "webpack --config webpack.prod.js --json > stats.json"
   },
   "repository": {
     "type": "git",
     "url": "github.com/aurelius0523/spring-react-frontend"
   },
-  "author": "kim.loong.tan",
+  "author": "kim.loong.tan/aurelius0523",
   "license": "ISC",
   "devDependencies": {
     "babel-loader": "^7.1.4",
@@ -26,6 +28,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "html-loader": "^0.5.5",
@@ -37,7 +40,8 @@
     "webpack": "^4.6.0",
     "webpack-cli": "^2.1.2",
     "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack-merge": "^4.1.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "lodash": "^4.17.10",

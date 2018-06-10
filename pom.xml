@@ -36,12 +36,12 @@
             </configuration>
           </execution>
           <execution>
-            <id>npm run build</id>
+            <id>npm run package</id>
             <goals>
               <goal>npm</goal>
             </goals>
             <configuration>
-              <arguments>run build</arguments>
+              <arguments>run package</arguments>
             </configuration>
           </execution>
         </executions>

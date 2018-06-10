@@ -8,7 +8,6 @@ import { Footer, Header, VerticalScrollProgressBar } from '@modules/layouts';
 import { Todo } from '@modules/todos';
 
 const Layouts = styled.div`
-  height: inherit;
   display: flex;
   flex-direction: column;
   font-family: ${props => props.theme.fontFamily};
@@ -17,7 +16,6 @@ const Layouts = styled.div`
 const JustifiedContent = styled.div`
   justify-self: center;
   align-self: center;
-  min-height: 100%;
   margin-top: 63px;
   padding-left: 20px;
   padding-right: 20px;
@@ -30,6 +28,12 @@ const JustifiedContent = styled.div`
   }
 `;
 
+const StickyFooter = styled(Footer)`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: red;
+`;
 export default class App extends React.Component {
   render() {
     return (
@@ -39,7 +43,7 @@ export default class App extends React.Component {
         <JustifiedContent>
           <AppRouter />
         </JustifiedContent>
-        <Footer />
+        <StickyFooter />
       </Layouts>
     );
   }
