@@ -13,7 +13,8 @@
     "dev": "webpack --mode development --config webpack.dev.js && npm run start",
     "start": "webpack-dev-server --open --mode development --config webpack.dev.js",
     "package": "webpack --mode production --config webpack.maven.js",
-    "analyze": "webpack --config webpack.prod.js --json > stats.json"
+    "analyze": "webpack --config webpack.prod.js --json > stats.json",
+    "netlify": "webpack --mode production --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
